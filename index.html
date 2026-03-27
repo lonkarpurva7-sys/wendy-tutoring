@@ -3,150 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wendy's Tutoring Secure</title>
+<title>Wendy's Tutoring</title>
 
 <style>
-body{margin:0;font-family:sans-serif;background:#fff;color:#5A4A6A}
-header{display:flex;justify-content:space-between;padding:15px;background:#E6E6FA}
+body {margin:0;font-family:sans-serif;background:#FFFFFF;color:#5A4A6A;scroll-behavior:smooth}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:#E6E6FA;position:sticky;top:0}
+nav a{margin:0 10px;text-decoration:none;color:#5A4A6A;font-weight:bold}
 .btn{background:#F9C7C2;padding:10px 18px;border-radius:25px;border:none;cursor:pointer}
-.section{padding:40px}
-.hidden{display:none}
-input{padding:10px;margin:5px;width:90%}
+.hero{padding:80px;text-align:center;background:linear-gradient(#E6E6FA,#FFDAB9)}
+.section{padding:50px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#fff;padding:20px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.08)}
+footer{background:#E6E6FA;padding:20px;text-align:center}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px;border-radius:50%;cursor:pointer}
 </style>
 </head>
 
 <body>
 
 <header>
-<h2>🏆 Wendy's Tutoring</h2>
-<button class="btn" onclick="openPayment()">Enroll</button>
+<div><b>🏆 Wendy's Tutoring</b></div>
+<nav>
+<a href="#">Home</a>
+<a href="#boards">Courses</a>
+<a href="#features">Features</a>
+<a href="#contact">Contact</a>
+</nav>
+<button class="btn" onclick="openPayment()">Enroll Now</button>
 </header>
 
-<div class="section">
-<h2>Login</h2>
-<input id="username" placeholder="Student ID">
-<input id="password" type="password" placeholder="Password">
-<button class="btn" onclick="login()">Login</button>
+<div class="hero">
+<h1>✨ Wendy's Tutoring ✨</h1>
+<p>Score Better in Exams with Personal Guidance 🎯</p>
+<button class="btn" onclick="scrollToBoards()">Explore Courses</button>
+<button class="btn" onclick="openPayment()">Enroll Now</button>
 </div>
 
-<div class="section hidden" id="dashboard">
-<h2>Dashboard</h2>
-<div id="welcome"></div>
+<div class="section" id="boards">
+<h2>Courses</h2>
+<div class="cards">
 
-<h3>Classes</h3>
-<div id="classes"></div>
-
-<h3>Notes</h3>
-<div id="notes"></div>
+<div class="card">
+<h3>NIOS</h3>
+<p>Class 10 & 12</p>
+<p><b>₹1500 (Full Course)</b></p>
+<ul>
+<li>All Subjects</li>
+<li>Recorded Classes</li>
+<li>Bilingual Material</li>
+<li>Doubt Solving</li>
+<li>Career Counseling</li>
+</ul>
+<button class="btn" onclick="openPayment()">Enroll</button>
 </div>
 
-<div class="section hidden" id="admin">
-<h2>Admin Panel</h2>
-
-<h3>Create Student</h3>
-<input id="newUser" placeholder="Student ID">
-<input id="newPass" placeholder="Password">
-<button class="btn" onclick="createStudent()">Create</button>
-
-<h3>Add Class</h3>
-<input id="classTitle" placeholder="Title">
-<input id="classLink" placeholder="Link">
-<button class="btn" onclick="addClass()">Add</button>
-
-<h3>Add Note</h3>
-<input id="noteTitle" placeholder="Title">
-<input id="noteLink" placeholder="Link">
-<button class="btn" onclick="addNote()">Add</button>
+<div class="card">
+<h3>CBSE</h3>
+<p>Class 1–3: ₹1200/month</p>
+<p>Class 4–7: ₹1500/month</p>
+<ul>
+<li>All Subjects</li>
+<li>Recorded Classes</li>
+<li>Bilingual Material</li>
+<li>Doubt Solving</li>
+</ul>
+<button class="btn" onclick="openPayment()">Enroll</button>
 </div>
 
-<div id="paymentModal" class="hidden" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000000aa;">
-<div style="background:#fff;padding:20px;margin:100px auto;width:300px;text-align:center">
-<h3>UPI Payment</h3>
+<div class="card">
+<h3>ICSE</h3>
+<p>Class 1–3: ₹1200/month</p>
+<p>Class 4–7: ₹1500/month</p>
+<ul>
+<li>All Subjects</li>
+<li>Recorded Classes</li>
+<li>Bilingual Material</li>
+<li>Doubt Solving</li>
+</ul>
+<button class="btn" onclick="openPayment()">Enroll</button>
+</div>
+
+</div>
+</div>
+
+<div class="section" id="features">
+<h2>Why Choose Wendy's Tutoring</h2>
+<div class="cards">
+<div class="card">📚 All Subjects Covered</div>
+<div class="card">🎥 Recorded Classes Available</div>
+<div class="card">🌐 Hindi + English Material</div>
+<div class="card">❓ Personal Doubt Solving</div>
+<div class="card">🏆 Scholarship Available</div>
+<div class="card">🎯 Career Counseling</div>
+</div>
+</div>
+
+<div class="section" id="contact">
+<h2>Contact</h2>
+<p>📞 <a href="tel:7498074775">7498074775</a></p>
+<p>📧 lonkarpurva7@gmail.com</p>
+<p>💳 UPI: 7498074775@ybl</p>
+<a href="https://wa.me/917498074775">💬 Chat on WhatsApp</a>
+</div>
+
+<!-- PAYMENT MODAL -->
+<div id="paymentModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000000aa;">
+<div style="background:#fff;padding:20px;margin:100px auto;width:300px;border-radius:15px;text-align:center">
+<h3>Pay via UPI</h3>
 <p>7498074775@ybl</p>
-<button onclick="copyUPI()">Copy</button>
-<button onclick="window.open('https://wa.me/917498074775')">I've Paid</button>
+<button onclick="copyUPI()">Copy UPI</button>
+<br><br>
+<button onclick="openWhatsApp()">I've Made Payment</button>
+<br><br>
 <button onclick="closePayment()">Close</button>
 </div>
 </div>
 
+<div class="whatsapp" onclick="openWhatsApp()">💬</div>
+
+<footer>
+<p>© 2026 Wendy's Tutoring</p>
+</footer>
+
 <script>
-
-// LOGIN SYSTEM
-function login(){
-let u=document.getElementById('username').value;
-let p=document.getElementById('password').value;
-let users=JSON.parse(localStorage.getItem('users')||'{}');
-
-if(users[u] && users[u].password===p){
-localStorage.setItem('currentUser',u);
-document.getElementById('dashboard').classList.remove('hidden');
-document.getElementById('welcome').innerText='Welcome '+u;
-loadContent();
-}else{
-alert('Invalid login');
-}
+function scrollToBoards(){
+  document.getElementById('boards').scrollIntoView({behavior:'smooth'});
 }
 
-// LOAD CONTENT
-function loadContent(){
-let classes=JSON.parse(localStorage.getItem('classes')||'[]');
-let notes=JSON.parse(localStorage.getItem('notes')||'[]');
-
-let cDiv=document.getElementById('classes');
-cDiv.innerHTML='';
-classes.forEach(c=>{
-let el=document.createElement('div');
-el.innerHTML=`<a href="${c.link}" target="_blank">▶ ${c.title}</a>`;
-cDiv.appendChild(el);
-});
-
-let nDiv=document.getElementById('notes');
-nDiv.innerHTML='';
-notes.forEach(n=>{
-let el=document.createElement('div');
-el.innerHTML=`<a href="${n.link}" target="_blank">📄 ${n.title}</a>`;
-nDiv.appendChild(el);
-});
+function openPayment(){
+  document.getElementById('paymentModal').style.display = 'block';
 }
 
-// ADMIN FUNCTIONS
-function createStudent(){
-let u=document.getElementById('newUser').value;
-let p=document.getElementById('newPass').value;
-let users=JSON.parse(localStorage.getItem('users')||'{}');
-users[u]={password:p};
-localStorage.setItem('users',JSON.stringify(users));
-alert('Student created');
+function closePayment(){
+  document.getElementById('paymentModal').style.display = 'none';
 }
 
-function addClass(){
-let t=document.getElementById('classTitle').value;
-let l=document.getElementById('classLink').value;
-let data=JSON.parse(localStorage.getItem('classes')||'[]');
-data.push({title:t,link:l});
-localStorage.setItem('classes',JSON.stringify(data));
-alert('Class added');
+function copyUPI(){
+  navigator.clipboard.writeText('7498074775@ybl');
+  alert('UPI Copied');
 }
 
-function addNote(){
-let t=document.getElementById('noteTitle').value;
-let l=document.getElementById('noteLink').value;
-let data=JSON.parse(localStorage.getItem('notes')||'[]');
-data.push({title:t,link:l});
-localStorage.setItem('notes',JSON.stringify(data));
-alert('Note added');
+function openWhatsApp(){
+  window.open('https://wa.me/917498074775');
 }
-
-// ADMIN ACCESS
-if(window.location.search.includes('admin=1')){
-document.getElementById('admin').classList.remove('hidden');
-}
-
-// PAYMENT
-function openPayment(){document.getElementById('paymentModal').classList.remove('hidden')}
-function closePayment(){document.getElementById('paymentModal').classList.add('hidden')}
-function copyUPI(){navigator.clipboard.writeText('7498074775@ybl');alert('Copied')}
-
 </script>
 
 </body>
